@@ -2,3 +2,4 @@ install: ./gen_sh.sh
 script: ./hello_world_asm
 os: osx
 language: C
+sudo: enabled
