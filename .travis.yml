@@ -1,5 +1,10 @@
-install: ./gen_sh.sh
-script: ./hello_world_asm
+#!/usr/bin/env sh
 os: osx
 language: C
 sudo: enabled
+before_install: echo "before install!"
+install: ./gen_sh.sh
+before_script: chmod +x hello_world_asm
+script: ./hello_world_asm
+after_success: echo "success!"
+after_script: echo "end!"
