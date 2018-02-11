@@ -14,8 +14,6 @@ after_script: echo "end!"
 
 jobs:
   include:
-    - stage: test
-      script: ./hello_world_asm
     - stage: Github Release
       script: echo "Deploying to GitHub releases"
       deploy:
