@@ -1,8 +1,7 @@
-#!/usr/bin/env sh
 language: C
 sudo: false
 os: osx
-osx_image: xcode9.0.1
+osx_image: xcode9.1
 before_install:
 - echo "before install!"
 - chmod +x ./gen_sh.sh
