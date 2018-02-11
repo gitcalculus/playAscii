@@ -16,5 +16,5 @@ _main:
 	callq _printf
 	popq %rbp
 	movl $0x2000001, %eax
-	movl $0x4, %edi
+	movl $0x0, %edi
 	syscal
