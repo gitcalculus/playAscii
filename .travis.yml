@@ -12,11 +12,16 @@ script: echo "emmmmm"
 after_success: echo "success!"
 after_failure: echo "failure!"
 after_script: echo "end!"
-deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file: ./hello_world_asm
-  skip_cleanup: true
-  on:
-    tags: true
+
+jobs:
+  include:
+    - stage: Github Release
+      script: ./hello_world_asm
+      deploy:
+        provider: releases
+        api_key: $GITHUB_TOKEN
+        file: ./hello_world_asm
+        skip_cleanup: true
+        on:
+          tags: true
 
