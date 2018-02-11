@@ -19,6 +19,8 @@ jobs:
           deploy:
             provider: releases
             api_key: $GITHUB_TOKEN
+            file: ./hello_world_asm
             skip_cleanup: true
             on:
-              tags: true
+                tags: true
+
