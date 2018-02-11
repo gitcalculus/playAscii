@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 language: C
 before_install:
-- gcc -o helloAsm hello_asm.o
 - echo "before install!"
 - chmod +x ./gen_sh.sh
 install: ./gen_sh.sh
