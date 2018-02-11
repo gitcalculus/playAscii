@@ -2,12 +2,13 @@
 language: C
 sudo: false
 os: osx
+osx_image: xcode9
 before_install:
 - echo "before install!"
 - chmod +x ./gen_sh.sh
 install: ./gen_sh.sh
 before_script: chmod +x hello_world_asm
-script: echo "gen finish!"
+script: ./hello_world_asm
 after_success: echo "success!"
 after_failure: echo "failure!"
 after_script: echo "end!"
