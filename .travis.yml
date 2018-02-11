@@ -7,17 +7,16 @@ before_install:
 - echo "before install!"
 - chmod +x ./gen_sh.sh
 install: ./gen_sh.sh
-
-jobs:
-  include:
-      script: ./hello_world_asm 1
-    - stage: Github Release
-      script: echo "Deploying to GitHub releases"
-      deploy:
-        provider: releases
-        api_key: $GITHUB_TOKEN
-        file: ./hello_world_asm
-        skip_cleanup: true
-        on:
-          tags: true
+before_script: chmod +x hello_world_asm
+script: echo "emmmmm"
+after_success: echo "success!"
+after_failure: echo "failure!"
+after_script: echo "end!"
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: ./hello_world_asm
+  skip_cleanup: true
+  on:
+    tags: true
 
